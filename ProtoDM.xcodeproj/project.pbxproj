@@ -11,6 +11,11 @@
 		1636363629C5E56000BCFC29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1636363529C5E56000BCFC29 /* ContentView.swift */; };
 		1636363829C5E56800BCFC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1636363729C5E56800BCFC29 /* Assets.xcassets */; };
 		1636363C29C5E56800BCFC29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1636363B29C5E56800BCFC29 /* Preview Assets.xcassets */; };
+		164E721429C5E8AA00AE7699 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 164E721229C5E8AA00AE7699 /* Main.xcdatamodeld */; };
+		16C9DE8629C610BD001A882F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE8529C610BD001A882F /* DataController.swift */; };
+		16C9DE8A29C706E7001A882F /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE8929C706E7001A882F /* SideBarView.swift */; };
+		16C9DE8C29C70728001A882F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE8B29C70728001A882F /* DetailView.swift */; };
+		16C9DE8E29C70B53001A882F /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE8D29C70B53001A882F /* Filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,12 @@
 		1636363729C5E56800BCFC29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1636363929C5E56800BCFC29 /* ProtoDM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProtoDM.entitlements; sourceTree = "<group>"; };
 		1636363B29C5E56800BCFC29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		164E721329C5E8AA00AE7699 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		16C9DE8529C610BD001A882F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		16C9DE8829C6FB02001A882F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		16C9DE8929C706E7001A882F /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
+		16C9DE8B29C70728001A882F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		16C9DE8D29C70B53001A882F /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +63,14 @@
 		1636363229C5E56000BCFC29 /* ProtoDM */ = {
 			isa = PBXGroup;
 			children = (
+				16C9DE8829C6FB02001A882F /* Info.plist */,
 				1636363329C5E56000BCFC29 /* ProtoDMApp.swift */,
 				1636363529C5E56000BCFC29 /* ContentView.swift */,
+				16C9DE8929C706E7001A882F /* SideBarView.swift */,
+				16C9DE8B29C70728001A882F /* DetailView.swift */,
+				16C9DE8D29C70B53001A882F /* Filter.swift */,
+				16C9DE8529C610BD001A882F /* DataController.swift */,
+				164E721229C5E8AA00AE7699 /* Main.xcdatamodeld */,
 				1636363729C5E56800BCFC29 /* Assets.xcassets */,
 				1636363929C5E56800BCFC29 /* ProtoDM.entitlements */,
 				1636363A29C5E56800BCFC29 /* Preview Content */,
@@ -139,7 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C9DE8E29C70B53001A882F /* Filter.swift in Sources */,
+				164E721429C5E8AA00AE7699 /* Main.xcdatamodeld in Sources */,
+				16C9DE8C29C70728001A882F /* DetailView.swift in Sources */,
+				16C9DE8629C610BD001A882F /* DataController.swift in Sources */,
 				1636363629C5E56000BCFC29 /* ContentView.swift in Sources */,
+				16C9DE8A29C706E7001A882F /* SideBarView.swift in Sources */,
 				1636363429C5E56000BCFC29 /* ProtoDMApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +291,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProtoDM/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -307,6 +330,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProtoDM/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -354,6 +378,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		164E721229C5E8AA00AE7699 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				164E721329C5E8AA00AE7699 /* Main.xcdatamodel */,
+			);
+			currentVersion = 164E721329C5E8AA00AE7699 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1636362829C5E56000BCFC29 /* Project object */;
 }
