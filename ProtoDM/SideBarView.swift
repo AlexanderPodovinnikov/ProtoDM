@@ -34,6 +34,7 @@ struct SideBarView: View {
                             .badge(filter.tag?.tagActiveIssues.count ?? 0)
                     }
                 }
+                .onDelete(perform: delete)
             }
         }
         .toolbar {
@@ -45,6 +46,13 @@ struct SideBarView: View {
             }
         }
     }
+
+    func delete(_ offsets: IndexSet) {
+        offsets.forEach { offset in
+            let item = tags[offset]
+            dataController.delete(item)
+        }
+    }
 }
 
 struct SideBarView_Previews: PreviewProvider {
@@ -52,6 +60,7 @@ struct SideBarView_Previews: PreviewProvider {
         NavigationView {
             SideBarView()
                 .environmentObject(DataController.preview)
+                .environment(\.managedObjectContext, DataController.preview.container.viewContext)
         }
     }
 }
