@@ -19,6 +19,8 @@
 		16C9DE9029C73094001A882F /* Issue-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE8F29C73094001A882F /* Issue-CoreDataHelpers.swift */; };
 		16C9DE9229C7322E001A882F /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE9129C7322E001A882F /* Tag-CoreDataHelpers.swift */; };
 		16C9DE9429C85DDF001A882F /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE9329C85DDF001A882F /* IssueRow.swift */; };
+		16C9DE9629C9AAD1001A882F /* NoIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE9529C9AAD1001A882F /* NoIssueView.swift */; };
+		16C9DE9829C9ACE0001A882F /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE9729C9ACE0001A882F /* IssueView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		16C9DE8F29C73094001A882F /* Issue-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Issue-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		16C9DE9129C7322E001A882F /* Tag-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		16C9DE9329C85DDF001A882F /* IssueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRow.swift; sourceTree = "<group>"; };
+		16C9DE9529C9AAD1001A882F /* NoIssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIssueView.swift; sourceTree = "<group>"; };
+		16C9DE9729C9ACE0001A882F /* IssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				16C9DE8829C6FB02001A882F /* Info.plist */,
 				1636363329C5E56000BCFC29 /* ProtoDMApp.swift */,
 				1636363529C5E56000BCFC29 /* ContentView.swift */,
+				16C9DE9729C9ACE0001A882F /* IssueView.swift */,
 				16C9DE9329C85DDF001A882F /* IssueRow.swift */,
 				16C9DE8929C706E7001A882F /* SideBarView.swift */,
 				16C9DE8F29C73094001A882F /* Issue-CoreDataHelpers.swift */,
@@ -79,6 +84,7 @@
 				16C9DE8B29C70728001A882F /* DetailView.swift */,
 				16C9DE8D29C70B53001A882F /* Filter.swift */,
 				16C9DE8529C610BD001A882F /* DataController.swift */,
+				16C9DE9529C9AAD1001A882F /* NoIssueView.swift */,
 				164E721229C5E8AA00AE7699 /* Main.xcdatamodeld */,
 				1636363729C5E56800BCFC29 /* Assets.xcassets */,
 				1636363929C5E56800BCFC29 /* ProtoDM.entitlements */,
@@ -167,6 +173,7 @@
 			files = (
 				16C9DE8E29C70B53001A882F /* Filter.swift in Sources */,
 				16C9DE9229C7322E001A882F /* Tag-CoreDataHelpers.swift in Sources */,
+				16C9DE9629C9AAD1001A882F /* NoIssueView.swift in Sources */,
 				164E721429C5E8AA00AE7699 /* Main.xcdatamodeld in Sources */,
 				16C9DE9029C73094001A882F /* Issue-CoreDataHelpers.swift in Sources */,
 				16C9DE8C29C70728001A882F /* DetailView.swift in Sources */,
@@ -174,6 +181,7 @@
 				1636363629C5E56000BCFC29 /* ContentView.swift in Sources */,
 				16C9DE8A29C706E7001A882F /* SideBarView.swift in Sources */,
 				16C9DE9429C85DDF001A882F /* IssueRow.swift in Sources */,
+				16C9DE9829C9ACE0001A882F /* IssueView.swift in Sources */,
 				1636363429C5E56000BCFC29 /* ProtoDMApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

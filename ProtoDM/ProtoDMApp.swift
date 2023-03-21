@@ -9,7 +9,9 @@ import SwiftUI
 
 @main
 struct ProtoDMApp: App {
+    @Environment(\.scenePhase) var scenePhase
     @StateObject var dataController = DataController()
+
     var body: some Scene {
         WindowGroup {
             NavigationSplitView {
@@ -21,6 +23,11 @@ struct ProtoDMApp: App {
             }
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)
+                .onChange(of: scenePhase) { _ in
+                    if scenePhase != .active {
+                        dataController.save()
+                    }
+                }
         }
     }
 }
