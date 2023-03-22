@@ -7,6 +7,15 @@
 
 import CoreData
 
+enum SortType: String {
+    case dateCreated = "creationDate"
+    case dateModified = "modificationDate"
+}
+
+enum Status {
+    case all, open, closed
+}
+
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
 
@@ -15,7 +24,7 @@ class DataController: ObservableObject {
 
     @Published var filterText = "" //don't happy with this stuff here
 
-    var suggestedFilterTokens: [Tag] {
+    var suggestedFilterTokens: [Tag] {  // all filter tokens
         guard filterText.starts(with: "#") else {
             return []
         }
@@ -30,7 +39,13 @@ class DataController: ObservableObject {
         return (try? container.viewContext.fetch(request).sorted()) ?? []
     }
 
-    @Published var filterTokens = [Tag]()
+    @Published var filterTokens = [Tag]() // users choice
+
+    @Published var filterEnabled = false
+    @Published var filterPriority = -1  // any priority
+    @Published var filterStatus = Status.all
+    @Published var sortType = SortType.dateCreated
+    @Published var sortNewestFirst = true
 
     private var saveTask: Task<Void, Error>?
 
@@ -146,16 +161,19 @@ class DataController: ObservableObject {
         let filter = selectedFilter ?? .all
         var predicates = [NSPredicate]()
 
+        // smart mailbox with tags
         if let tag = filter.tag {
             let tagPredicate = NSPredicate(format: "tags CONTAINS %@", tag)
             predicates.append(tagPredicate)
         } else {
+        // smart mailbox by modification date
             let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
             predicates.append(datePredicate)
         }
 
         let trimmedFilterText = filterText.trimmingCharacters(in: .whitespaces)
 
+        // filter by text
         if trimmedFilterText.isEmpty == false {
             let titlePredicate = NSPredicate(format: "title CONTAINS[c] %@", trimmedFilterText)
             let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
@@ -163,6 +181,8 @@ class DataController: ObservableObject {
             let combinedPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [titlePredicate, contentPredicate])
             predicates.append(combinedPredicate)
         }
+
+        // filter by tokens
         if filterTokens.isEmpty == false {
             for filterToken in filterTokens {
                 let tokenPredicate = NSPredicate(format: "tags CONTAINS %@", filterToken)
@@ -170,8 +190,23 @@ class DataController: ObservableObject {
             }
         }
 
+        // additional menu button for other filter and sort options
+        if filterEnabled {
+            if filterPriority >= 0 {
+                let priorityFilter = NSPredicate(format: "priority = %d", filterPriority)
+                predicates.append(priorityFilter)
+            }
+
+            if filterStatus != .all {
+                let lookForClosed = filterStatus == .closed
+                let statusFilter = NSPredicate(format: "completed = %@", NSNumber(value: lookForClosed))
+                predicates.append(statusFilter)
+            }
+        }
+
         let request = Issue.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
 
         let allIssues = (try? container.viewContext.fetch(request)) ?? []
         return allIssues.sorted()
