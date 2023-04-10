@@ -21,6 +21,11 @@
 		16C9DE9429C85DDF001A882F /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE9329C85DDF001A882F /* IssueRow.swift */; };
 		16C9DE9629C9AAD1001A882F /* NoIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE9529C9AAD1001A882F /* NoIssueView.swift */; };
 		16C9DE9829C9ACE0001A882F /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE9729C9ACE0001A882F /* IssueView.swift */; };
+		16DB4ADE29E3FF2C00E0E27A /* Bundel-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB4ADD29E3FF2C00E0E27A /* Bundel-Decodable.swift */; };
+		16DB4AE029E404A100E0E27A /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 16DB4ADF29E404A100E0E27A /* Awards.json */; };
+		16DB4AE229E404C900E0E27A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16DB4AE129E404C900E0E27A /* Colors.xcassets */; };
+		16DB4AE429E4055300E0E27A /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB4AE329E4055300E0E27A /* Award.swift */; };
+		16DB4AE629E4071D00E0E27A /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB4AE529E4071D00E0E27A /* AwardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		16C9DE9329C85DDF001A882F /* IssueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRow.swift; sourceTree = "<group>"; };
 		16C9DE9529C9AAD1001A882F /* NoIssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIssueView.swift; sourceTree = "<group>"; };
 		16C9DE9729C9ACE0001A882F /* IssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueView.swift; sourceTree = "<group>"; };
+		16DB4ADD29E3FF2C00E0E27A /* Bundel-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundel-Decodable.swift"; sourceTree = "<group>"; };
+		16DB4ADF29E404A100E0E27A /* Awards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Awards.json; sourceTree = "<group>"; };
+		16DB4AE129E404C900E0E27A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		16DB4AE329E4055300E0E27A /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
+		16DB4AE529E4071D00E0E27A /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,14 +89,19 @@
 				16C9DE9729C9ACE0001A882F /* IssueView.swift */,
 				16C9DE9329C85DDF001A882F /* IssueRow.swift */,
 				16C9DE8929C706E7001A882F /* SideBarView.swift */,
+				16DB4AE529E4071D00E0E27A /* AwardsView.swift */,
 				16C9DE8F29C73094001A882F /* Issue-CoreDataHelpers.swift */,
 				16C9DE9129C7322E001A882F /* Tag-CoreDataHelpers.swift */,
 				16C9DE8B29C70728001A882F /* DetailView.swift */,
 				16C9DE8D29C70B53001A882F /* Filter.swift */,
 				16C9DE8529C610BD001A882F /* DataController.swift */,
 				16C9DE9529C9AAD1001A882F /* NoIssueView.swift */,
+				16DB4ADD29E3FF2C00E0E27A /* Bundel-Decodable.swift */,
+				16DB4AE329E4055300E0E27A /* Award.swift */,
 				164E721229C5E8AA00AE7699 /* Main.xcdatamodeld */,
 				1636363729C5E56800BCFC29 /* Assets.xcassets */,
+				16DB4ADF29E404A100E0E27A /* Awards.json */,
+				16DB4AE129E404C900E0E27A /* Colors.xcassets */,
 				1636363929C5E56800BCFC29 /* ProtoDM.entitlements */,
 				1636363A29C5E56800BCFC29 /* Preview Content */,
 			);
@@ -160,6 +175,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1636363C29C5E56800BCFC29 /* Preview Assets.xcassets in Resources */,
+				16DB4AE229E404C900E0E27A /* Colors.xcassets in Resources */,
+				16DB4AE029E404A100E0E27A /* Awards.json in Resources */,
 				1636363829C5E56800BCFC29 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16DB4ADE29E3FF2C00E0E27A /* Bundel-Decodable.swift in Sources */,
+				16DB4AE429E4055300E0E27A /* Award.swift in Sources */,
+				16DB4AE629E4071D00E0E27A /* AwardsView.swift in Sources */,
 				16C9DE8E29C70B53001A882F /* Filter.swift in Sources */,
 				16C9DE9229C7322E001A882F /* Tag-CoreDataHelpers.swift in Sources */,
 				16C9DE9629C9AAD1001A882F /* NoIssueView.swift in Sources */,

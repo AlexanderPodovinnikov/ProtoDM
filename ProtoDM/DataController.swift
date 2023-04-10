@@ -132,7 +132,6 @@ class DataController: ObservableObject {
 
         let request2: NSFetchRequest<NSFetchRequestResult> = Issue.fetchRequest()
         delete(request2)
-
         save()
     }
 
@@ -145,6 +144,23 @@ class DataController: ObservableObject {
         }
     }
 
+    func newIssue() {
+        let issue = Issue(context: container.viewContext)
+        issue.title = "New Issue"
+        issue.creationDate = .now
+        if let tag = selectedFilter?.tag {
+            issue.addToTags(tag)
+        }
+        save()
+        selectedIssue = issue
+    }
+
+    func newTag() {
+        let tag = Tag(context: container.viewContext)
+        tag.id = UUID()
+        tag.name = "New tag"
+        save()
+    }
 
     func missingTags(from issue: Issue) -> [Tag] {
         let request = Tag.fetchRequest()
@@ -206,9 +222,9 @@ class DataController: ObservableObject {
 
         let request = Issue.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
-        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
+        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: !sortNewestFirst)]
 
         let allIssues = (try? container.viewContext.fetch(request)) ?? []
-        return allIssues.sorted()
+        return allIssues
     }
 }

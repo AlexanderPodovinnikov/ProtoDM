@@ -19,7 +19,7 @@ struct ContentView: View {
             .onDelete(perform: delete)
         }
         .navigationTitle("Issues")
-        .searchable(text: $dataController.filterText, tokens: $dataController.filterTokens, suggestedTokens: .constant(dataController.suggestedFilterTokens), prompt: "Filter text, start with # to add tags") { tag in
+        .searchable(text: $dataController.filterText, tokens: $dataController.filterTokens, suggestedTokens: .constant(dataController.suggestedFilterTokens), prompt: "Enter text, start with # to add tags") { tag in
             Text(tag.tagName)
         }
         .toolbar {
@@ -61,6 +61,9 @@ struct ContentView: View {
             } label: {
                 Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
                     .symbolVariant(dataController.filterEnabled ? .fill : .none)
+            }
+            Button(action: dataController.newIssue) {
+                Label("New Issue", systemImage: "plus.circle")
             }
         }
     }
