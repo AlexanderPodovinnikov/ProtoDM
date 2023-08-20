@@ -12,6 +12,12 @@
 		1636363829C5E56800BCFC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1636363729C5E56800BCFC29 /* Assets.xcassets */; };
 		1636363C29C5E56800BCFC29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1636363B29C5E56800BCFC29 /* Preview Assets.xcassets */; };
 		164E721429C5E8AA00AE7699 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 164E721229C5E8AA00AE7699 /* Main.xcdatamodeld */; };
+		16738ECD2A9105E000B51383 /* SideBarToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16738ECC2A9105E000B51383 /* SideBarToolbarView.swift */; };
+		16738ECF2A911E3D00B51383 /* IssueViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16738ECE2A911E3D00B51383 /* IssueViewToolbar.swift */; };
+		16738ED12A9120DB00B51383 /* ContentToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16738ED02A9120DB00B51383 /* ContentToolbarView.swift */; };
+		16738ED32A922E1900B51383 /* TagsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16738ED22A922E1900B51383 /* TagsMenuView.swift */; };
+		16738ED52A9231FA00B51383 /* SmartFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16738ED42A9231FA00B51383 /* SmartFilterRow.swift */; };
+		16738ED72A9235EE00B51383 /* UserFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16738ED62A9235EE00B51383 /* UserFilterRow.swift */; };
 		16C9DE8629C610BD001A882F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE8529C610BD001A882F /* DataController.swift */; };
 		16C9DE8A29C706E7001A882F /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE8929C706E7001A882F /* SideBarView.swift */; };
 		16C9DE8C29C70728001A882F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9DE8B29C70728001A882F /* DetailView.swift */; };
@@ -36,6 +42,12 @@
 		1636363929C5E56800BCFC29 /* ProtoDM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProtoDM.entitlements; sourceTree = "<group>"; };
 		1636363B29C5E56800BCFC29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		164E721329C5E8AA00AE7699 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		16738ECC2A9105E000B51383 /* SideBarToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarToolbarView.swift; sourceTree = "<group>"; };
+		16738ECE2A911E3D00B51383 /* IssueViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewToolbar.swift; sourceTree = "<group>"; };
+		16738ED02A9120DB00B51383 /* ContentToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentToolbarView.swift; sourceTree = "<group>"; };
+		16738ED22A922E1900B51383 /* TagsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsMenuView.swift; sourceTree = "<group>"; };
+		16738ED42A9231FA00B51383 /* SmartFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFilterRow.swift; sourceTree = "<group>"; };
+		16738ED62A9235EE00B51383 /* UserFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterRow.swift; sourceTree = "<group>"; };
 		16C9DE8529C610BD001A882F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		16C9DE8829C6FB02001A882F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		16C9DE8929C706E7001A882F /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
@@ -86,9 +98,15 @@
 				16C9DE8829C6FB02001A882F /* Info.plist */,
 				1636363329C5E56000BCFC29 /* ProtoDMApp.swift */,
 				1636363529C5E56000BCFC29 /* ContentView.swift */,
+				16738ED02A9120DB00B51383 /* ContentToolbarView.swift */,
 				16C9DE9729C9ACE0001A882F /* IssueView.swift */,
+				16738ED42A9231FA00B51383 /* SmartFilterRow.swift */,
+				16738ECE2A911E3D00B51383 /* IssueViewToolbar.swift */,
 				16C9DE9329C85DDF001A882F /* IssueRow.swift */,
 				16C9DE8929C706E7001A882F /* SideBarView.swift */,
+				16738ED62A9235EE00B51383 /* UserFilterRow.swift */,
+				16738ED22A922E1900B51383 /* TagsMenuView.swift */,
+				16738ECC2A9105E000B51383 /* SideBarToolbarView.swift */,
 				16DB4AE529E4071D00E0E27A /* AwardsView.swift */,
 				16C9DE8F29C73094001A882F /* Issue-CoreDataHelpers.swift */,
 				16C9DE9129C7322E001A882F /* Tag-CoreDataHelpers.swift */,
@@ -189,7 +207,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16DB4ADE29E3FF2C00E0E27A /* Bundel-Decodable.swift in Sources */,
+				16738ED32A922E1900B51383 /* TagsMenuView.swift in Sources */,
 				16DB4AE429E4055300E0E27A /* Award.swift in Sources */,
+				16738ECF2A911E3D00B51383 /* IssueViewToolbar.swift in Sources */,
+				16738ED52A9231FA00B51383 /* SmartFilterRow.swift in Sources */,
 				16DB4AE629E4071D00E0E27A /* AwardsView.swift in Sources */,
 				16C9DE8E29C70B53001A882F /* Filter.swift in Sources */,
 				16C9DE9229C7322E001A882F /* Tag-CoreDataHelpers.swift in Sources */,
@@ -197,9 +218,12 @@
 				164E721429C5E8AA00AE7699 /* Main.xcdatamodeld in Sources */,
 				16C9DE9029C73094001A882F /* Issue-CoreDataHelpers.swift in Sources */,
 				16C9DE8C29C70728001A882F /* DetailView.swift in Sources */,
+				16738ED12A9120DB00B51383 /* ContentToolbarView.swift in Sources */,
 				16C9DE8629C610BD001A882F /* DataController.swift in Sources */,
 				1636363629C5E56000BCFC29 /* ContentView.swift in Sources */,
+				16738ECD2A9105E000B51383 /* SideBarToolbarView.swift in Sources */,
 				16C9DE8A29C706E7001A882F /* SideBarView.swift in Sources */,
+				16738ED72A9235EE00B51383 /* UserFilterRow.swift in Sources */,
 				16C9DE9429C85DDF001A882F /* IssueRow.swift in Sources */,
 				16C9DE9829C9ACE0001A882F /* IssueView.swift in Sources */,
 				1636363429C5E56000BCFC29 /* ProtoDMApp.swift in Sources */,

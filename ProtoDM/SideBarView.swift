@@ -26,25 +26,11 @@ struct SideBarView: View {
     var body: some View {
         List(selection: $dataController.selectedFilter) {
             Section("Smart Filters") {
-                ForEach(smartFilters) { filter in
-                    NavigationLink(value: filter) {
-                        Label(filter.name, systemImage: filter.icon)
-                    }
-                }
+                ForEach(smartFilters, content: SmartFilterRow.init)
             }
             Section("Tags") {
                 ForEach(tagFilters) { filter in
-                    NavigationLink(value: filter) {
-                        Label(filter.name, systemImage: filter.icon)
-                            .badge(filter.tag?.tagActiveIssues.count ?? 0)
-                            .contextMenu {
-                                Button {
-                                    rename(filter)
-                                } label: {
-                                    Label("Rename", systemImage: "pencil")
-                                }
-                            }
-                    }
+                    UserFilterRow(filter: filter, delete: delete, rename: rename)
                 }
                 .onDelete(perform: delete)
             }
@@ -57,23 +43,9 @@ struct SideBarView: View {
                 AwardsView()
             }
         }
+        .navigationTitle("Filters")
         .toolbar {
-//            Button {
-//                dataController.deleteAll()
-//                dataController.createSampleData()
-//            } label: {
-//                Label("ADD SAMPLE DATA", systemImage: "flame")
-//            }
-            Button {
-                dataController.newTag()
-            } label: {
-                Label("Add tag", systemImage: "plus")
-            }
-            Button {
-                showingAwards.toggle()
-            } label: {
-                Label("Show awards", systemImage: "rosette")
-            }
+            SideBarToolbarView(showingAwards: $showingAwards)
         }
     }
 
@@ -82,6 +54,12 @@ struct SideBarView: View {
             let item = tags[offset]
             dataController.delete(item)
         }
+    }
+
+    func delete(_ filter: Filter) {
+        guard let tag = filter.tag else { return }
+        dataController.delete(tag)
+        dataController.save()
     }
 
     func rename(_ filter: Filter) {
